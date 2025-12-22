@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sri Gavisiddeshwara Jatra - Parking & Medical Help</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Traditional Religious Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Suranna:wght@400;700&family=Noto+Sans+Devanagari:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Sacred Traditional Religious Theme */
+      --bg-main: #f8f4ef;
+      --bg-card: #fffaf2;
+      --text-main: #2c1810;
+      --accent-saffron: #d97706;
+      --accent-vermilion: #b91c1c;
+      --accent-gold: #f59e0b;
+      --accent-turmeric: #eab308;
+      --border-sacred: #d4af37;
+      --border-soft: #e8d5a3;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow-divine: 0 20px 45px rgba(43, 24, 16, 0.15);
+      --shadow-glow: 0 0 25px rgba(217, 119, 6, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", "Noto Sans Devanagari", system-ui, sans-serif;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(233, 175, 60, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(185, 28, 28, 0.06) 0%, transparent 50%),
+        linear-gradient(135deg, #fdf8e8 0%, #f8f4ef 50%, #f5ede3 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-saffron), var(--accent-vermilion), var(--accent-gold));
+      box-shadow: 0 0 15px rgba(217, 119, 6, 0.4);
+      z-index: 1000;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    header {
+      text-align: center;
+      padding: 24px 16px 16px;
+      background: linear-gradient(white, rgba(255,255,255,0.9));
+      border-radius: var(--radius-lg);
+      margin-bottom: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-divine);
+      border: 2px solid rgba(212, 175, 55, 0.2);
+      position: relative;
+    }
+
+    /* header::before {
+      content: "🕉️";
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 23px;
+      background: white;
+      border-radius: 50%;
+      padding: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    } */
+
+    header::before {
+  content: "🛕";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 19px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,250,242,0.9));
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 
+    0 8px 20px rgba(0,0,0,0.15),
+    /* Sacred Golden Glow */
+    0 0 20px rgba(245, 158, 11, 0.6),
+    0 0 40px rgba(217, 119, 6, 0.4),
+    0 0 60px rgba(185, 28, 28, 0.2),
+    /* Inner Ring Glow */
+    inset 0 0 10px rgba(255,255,255,0.8);
+  border: 2px solid rgba(212, 175, 55, 0.6);
+  backdrop-filter: blur(10px);
+  animation: omGlow 3s ease-in-out infinite alternate;
+}
+
+/* Divine Glow Animation */
+@keyframes omGlow {
+  0% {
+    box-shadow: 
+      0 8px 20px rgba(0,0,0,0.15),
+      0 0 20px rgba(245, 158, 11, 0.6),
+      0 0 40px rgba(217, 119, 6, 0.4),
+      0 0 60px rgba(185, 28, 28, 0.2),
+      inset 0 0 10px rgba(255,255,255,0.8);
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    box-shadow: 
+      0 8px 25px rgba(0,0,0,0.2),
+      0 0 30px rgba(245, 158, 11, 0.8),
+      0 0 60px rgba(217, 119, 6, 0.6),
+      0 0 90px rgba(185, 28, 28, 0.3),
+      inset 0 0 15px rgba(255,255,255,1);
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+
+
+
+    .festival-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, rgba(217, 119, 6, 0.12), rgba(185, 28, 28, 0.08));
+      color: var(--accent-vermilion);
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: var(--shadow-glow);
+      margin-bottom: 16px;
+    }
+
+    .title-main {
+      font-family: "Suranna", "Times New Roman", serif;
+      font-size: 32px;
+      letter-spacing: 0.02em;
+      margin: 12px 0 8px;
+      background: linear-gradient(135deg, var(--accent-vermilion), var(--accent-saffron), var(--accent-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 4px rgba(43, 24, 16, 0.1);
+    }
+
+    .subtitle {
+      font-size: 14px;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: rgba(43, 24, 16, 0.85);
+    }
+
+    .hero-card {
+      margin-top: 24px;
+      background: linear-gradient(145deg, rgba(255, 250, 242, 0.95), rgba(248, 244, 239, 0.9));
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-divine);
+      padding: 24px 20px 28px;
+      border: 2px solid rgba(212, 175, 55, 0.25);
+      position: relative;
+      backdrop-filter: blur(12px);
+      overflow: visible;
+    }
+
+    .hero-card::before {
+      content: "🛕";
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 28px;
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-saffron), var(--accent-gold), var(--accent-vermilion));
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      box-shadow: 0 2px 10px rgba(217, 119, 6, 0.3);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-heading {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent-vermilion);
+      font-family: "Suranna", serif;
+    }
+
+    .hero-heading span {
+      font-size: 22px;
+    }
+
+    .hero-text {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(43, 24, 16, 0.9);
+      max-width: 640px;
+    }
+
+    .hero-cta-row {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      overflow: visible;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-ghost {
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: "Inter", sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-saffron), var(--accent-vermilion));
+      color: #fdf8e8;
+      box-shadow: 0 12px 30px rgba(217, 119, 6, 0.4);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-primary::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(217, 119, 6, 0.5);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,250,242,0.9));
+      border: 2px solid rgba(212, 175, 55, 0.4);
+      color: var(--accent-vermilion);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+      backdrop-filter: blur(15px);
+    }
+
+    .btn-secondary:hover {
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,248,235,0.98));
+      border-color: var(--accent-gold);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(212, 175, 55, 0.35);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.6);
+      color: var(--accent-vermilion);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 10px 16px;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+    }
+
+    .btn-icon-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .dropdown-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 8px;
+      background: linear-gradient(145deg, #fffaf2, #f8f4ef);
+      border-radius: var(--radius-md);
+      border: 2px solid rgba(212, 175, 55, 0.4);
+      box-shadow: var(--shadow-divine), 0 0 20px rgba(217, 119, 6, 0.15);
+      min-width: 240px;
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px) scale(0.95);
+      transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 999;
+      max-height: 280px;
+      overflow-y: auto;
+      backdrop-filter: blur(15px);
+    }
+
+    .dropdown-container.active > .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .dropdown-item {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 12px 18px;
+      font-size: 14px;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 150ms ease;
+      font-weight: 500;
+    }
+
+    .dropdown-item:hover {
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.08));
+      color: var(--accent-vermilion);
+      padding-left: 22px;
+    }
+
+    .item-icon {
+      font-size: 18px;
+      width: 22px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+     .instructions-section {
+      position: relative;
+      z-index: 200; /* Higher than dropdowns */
+      margin-top: 40px; /* More spacing */
+    }
+
+
+    .section-label {
+      margin-top: 32px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-saffron);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Noto Sans Devanagari", sans-serif;
+      /* position: relative; */
+    }
+
+    .section-label::before,
+    .section-label::after {
+      content: "।";
+      font-size: 20px;
+      color: rgba(217, 119, 6, 0.5);
+    }
+
+    #details {
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 1.7;
+      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,250,242,0.95));
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 2px dashed rgba(212, 175, 55, 0.4);
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    footer {
+      margin-top: 32px;
+      padding: 20px;
+      border-top: 2px solid rgba(212, 175, 55, 0.3);
+      text-align: center;
+      font-size: 13px;
+      color: rgba(43, 24, 16, 0.7);
+      background: rgba(255,255,255,0.7);
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(10px);
+    }
+
+    @media (max-width: 640px) {
+      .hero-card {
+        padding: 20px 16px;
+        border-radius: var(--radius-md);
+        margin-top: 20px;
+      }
+
+      .hero-heading {
+        font-size: 18px;
+        flex-wrap: wrap;
+      }
+
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .dropdown-menu {
+        left: 0;
+        right: 0;
+        min-width: 100%;
+        border-radius: var(--radius-md);
+      }
+
+      .title-main {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="festival-pill">
+        <span></span>
+        <span>Sri Gavisiddeshwara Jatra · Koppal</span>
+      </div>
+      <h1 class="title-main">Sri Gavisiddeshwara Jatra Seva Map</h1>
+      <p class="subtitle">
+        Parking and medical help points to guide devotees during the Jatra at Sri Gavisiddeshwara Matha. Tap a button to open the location in Google Maps.
+      </p>
+    </header>
+
+    <main>
+      <section class="hero-card">
+        <div class="hero-inner">
+         <div class="hero-heading">
+           <span>🛕</span>
+           <span>Matha & Jatra Area Navigation</span>
+         </div>
+         <p class="hero-text">
+           Use the buttons below to find <strong>two-wheeler parking</strong>, <strong>four-wheeler parking</strong>, and <strong>medical teams</strong> arranged around Sri Gavisiddeshwara Matha. Each option opens directly in Google Maps for easy navigation.
+         </p>
+
+         <div class="hero-cta-row">
+           <button class="btn-primary" id="openDirections">
+             Get directions to Sri Gavisiddeshwara Matha
+             <span class="btn-icon-circle">↗</span>
+           </button>
+
+           <!-- Two-Wheeler Parking -->
+           <div class="dropdown-container" data-dropdown="twoWheeler">
+             <button class="btn-secondary" id="twoWheelerBtn">
+               🏍️ Two-Wheeler Parking ▼
+             </button>
+             <div class="dropdown-menu" id="twoWheelerMenu">
+               <button class="dropdown-item" data-location="tw_parking_1">
+                 <span class="item-icon">🏍️</span> Gavi Math Back Side A
+               </button>
+               <button class="dropdown-item" data-location="tw_parking_2">
+                 <span class="item-icon">🏍️</span> Gavi Math Back Side B
+               </button>
+               <button class="dropdown-item" data-location="tw_parking_3">
+                 <span class="item-icon">🏍️</span> Huvinal Road Opp Kuvempu Nagar 
+               </button>
+               <button class="dropdown-item" data-location="tw_parking_4">
+                 <span class="item-icon">🏍️</span> Opp Yatri Nivas
+               </button>
+               <button class="dropdown-item" data-location="tw_parking_5">
+                 <span class="item-icon">🏍️</span> Gavishree Nagar 3rd Cross Opp (Dollars Colony)
+               </button>
+                 <button class="dropdown-item" data-location="tw_parking_6">
+                 <span class="item-icon">🏍️</span> APMC
+               </button>
+             </div>
+           </div>
+
+           <!-- Four-Wheeler Parking -->
+           <div class="dropdown-container" data-dropdown="fourWheeler">
+             <button class="btn-secondary" id="fourWheelerBtn">
+               🚗 Four-Wheeler Parking ▼
+             </button>
+             <div class="dropdown-menu" id="fourWheelerMenu">
+               <button class="dropdown-item" data-location="fw_parking_1">
+                 <span class="item-icon">🚗</span> Gavi Math Back Side
+               </button>
+               <button class="dropdown-item" data-location="fw_parking_2">
+                 <span class="item-icon">🚗</span> Huvinal Road Opp Kuvempu Nagar
+               </button>
+               <button class="dropdown-item" data-location="fw_parking_3">
+                 <span class="item-icon">🚗</span> Opp Yatri Nivas
+               </button>
+               <button class="dropdown-item" data-location="fw_parking_4">
+                 <span class="item-icon">🚗</span>  Gavishree Nagar 3rd Cross Opp (Dollars Colony)
+               </button>
+               <button class="dropdown-item" data-location="fw_parking_5">
+                 <span class="item-icon">🚗</span> APMC
+               </button>
+             </div>
+           </div>
+
+           <!-- Bus Parking Button (Single Dropdown Item) -->
+<div class="dropdown-container" data-dropdown="busParking">
+  <button class="btn-secondary" id="busParkingBtn">
+    🚌 Bus Parking ▼
+  </button>
+  <div class="dropdown-menu" id="busParkingMenu">
+    <button class="dropdown-item" data-location="bus_parking_1">
+      <span class="item-icon">🚌</span> SFS Cross
+    </button>
+  </div>
+</div>
+
+<!-- Mahaprasada Button (Single Dropdown Item) -->
+<div class="dropdown-container" data-dropdown="mahaprasada">
+  <button class="btn-secondary" id="mahaprasadaBtn">
+    🍚 Mahaprasada ▼
+  </button>
+  <div class="dropdown-menu" id="mahaprasadaMenu">
+    <button class="dropdown-item" data-location="mahaprasada_1">
+      <span class="item-icon">🍛</span> MahaDasoha (Prasada Nilaya)
+    </button>
+  </div>
+</div>
+
+
+           <!-- Medical Teams -->
+           <div class="dropdown-container" data-dropdown="medicalTeams">
+             <button class="btn-secondary" id="medicalTeamsBtn">
+               🩺 Medical Teams ▼
+             </button>
+             <div class="dropdown-menu" id="medicalTeamsMenu">
+               <button class="dropdown-item" data-location="med_team_1">
+                 <span class="item-icon">🩺</span> Medical Team 1
+               </button>
+               <button class="dropdown-item" data-location="med_team_2">
+                 <span class="item-icon">🩺</span> Medical Team 2
+               </button>
+               <button class="dropdown-item" data-location="med_team_3">
+                 <span class="item-icon">🩺</span> Medical Team 3
+               </button>
+               <button class="dropdown-item" data-location="med_team_4">
+                 <span class="item-icon">🩺</span> Medical Team 4
+               </button>
+             </div>
+           </div>
+           
+
+           <!-- <button class="btn-ghost" id="scrollToDetails">
+             View instructions <span>↓</span>
+           </button> -->
+         </div>
+       </div>
+      </section>
+
+      <div class="section-label">Jatra instructions</div>
+      <section id="details">
+        <p>
+         • Choose the appropriate parking based on your vehicle type and follow local volunteers' instructions near the parking area.
+        </p>
+        <p>
+         • For any health-related issue, please proceed to the nearest medical team point shown above, or contact volunteers for assistance.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Sri Gavisiddeshwara Jatra Seva. Website developed by Aman.
+    </footer>
+  </div>
+
+  <script>
+    // MAIN MAP LINKS – replace with your real Google Maps URLs
+    const mapLinks = {
+      matha_main: "https://maps.app.goo.gl/er3VeTCVFVk8ytDA7?g_st=aw",
+      
+      tw_parking_1: "https://maps.app.goo.gl/6DjYehBG2377ecMC6?g_st=aw",
+      tw_parking_2: "https://maps.app.goo.gl/CwAgiXDCGVbUtXa16?g_st=aw",
+      tw_parking_3: "https://maps.app.goo.gl/wRSSaaneTbd9c9TPA?g_st=aw",
+      tw_parking_4: "https://maps.app.goo.gl/YokkN3HX4fisUzT18?g_st=aw",
+      tw_parking_5: "https://maps.app.goo.gl/NCgGweGhCZiUvHNj7?g_st=aw",
+      tw_parking_6: "https://maps.app.goo.gl/4b6vUj2TyNkBf4Kz6?g_st=aw",
+
+
+      fw_parking_1: "https://maps.app.goo.gl/CwAgiXDCGVbUtXa16?g_st=aw",
+      fw_parking_2: "https://maps.app.goo.gl/wRSSaaneTbd9c9TPA?g_st=aw",
+      fw_parking_3: "https://maps.app.goo.gl/YokkN3HX4fisUzT18?g_st=aw",
+      fw_parking_4: "https://maps.app.goo.gl/NCgGweGhCZiUvHNj7?g_st=aw",
+      fw_parking_5: "https://maps.app.goo.gl/4b6vUj2TyNkBf4Kz6?g_st=aw",
+
+      bus_parking_1: "https://maps.app.goo.gl/kZmSSWH4Vz7rXoEp8?g_st=aw",
+    
+      mahaprasada_1: "https://maps.app.goo.gl/yYUWyPuyMaQJzcrz8?g_st=aw",
+
+      med_team_1: "https://maps.app.goo.gl/1CtPvj7DBi2khfG2A?g_st=aw",
+      med_team_2: "https://maps.app.goo.gl/YOUR_MED_TEAM_2",
+      med_team_3: "https://maps.app.goo.gl/YOUR_MED_TEAM_3",
+      med_team_4: "https://maps.app.goo.gl/YOUR_MED_TEAM_4"
+    };
+
+    const openDirBtn = document.getElementById("openDirections");
+    if (openDirBtn) {
+      openDirBtn.addEventListener("click", function () {
+        const url = mapLinks.matha_main || "https://maps.app.goo.gl/";
+        window.open(url, "_blank", "noopener");
+      });
+    }
+
+    document.querySelectorAll(".dropdown-container").forEach(container => {
+      const btn = container.querySelector("button");
+      if (!btn) return;
+      btn.addEventListener("click", e => {
+        e.stopPropagation();
+        document.querySelectorAll(".dropdown-container").forEach(other => {
+          if (other !== container) other.classList.remove("active");
+        });
+        container.classList.toggle("active");
+      });
+    });
+
+    document.querySelectorAll(".dropdown-item").forEach(item => {
+      item.addEventListener("click", e => {
+        e.stopPropagation();
+        const key = item.dataset.location;
+        if (key && mapLinks[key]) {
+          window.open(mapLinks[key], "_blank", "noopener");
+        }
+        document.querySelectorAll(".dropdown-container").forEach(c => c.classList.remove("active"));
+      });
+    });
+
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".dropdown-container").forEach(c => c.classList.remove("active"));
+    });
+
+    const scrollBtn = document.getElementById("scrollToDetails");
+    if (scrollBtn) {
+      scrollBtn.addEventListener("click", () => {
+        const details = document.getElementById("details");
+        if (!details) return;
+        details.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      });
+    }
+  </script>
+</body>
+</html>
